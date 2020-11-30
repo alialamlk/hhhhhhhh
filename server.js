@@ -4,15 +4,16 @@ const client = new Discord.Client
 client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("this bot is on");
 
+const prefix78 = "!" 
 
-
- 
-
+ // اول اقصد
+// تجارب تايم
 
 // روح ملف ثاتي
-//صبر يعم
+//
 client.on('message', message => {
-  if(message.content.startsWith("!help"))  {
+  
+  if(message.content.startsWith(prefix78 + "help"))  {
       var w = new Discord.MessageEmbed() 
 .setTitle("الاوامر العامة") 
       .setDescription("قريباً ") 
@@ -278,7 +279,7 @@ client.user.setUsername(args)
 ) 
  
 
-  .catch(console.error); 
+8  .catch(console.error); 
 }) 
 }) 
 } 
@@ -292,45 +293,4 @@ m.reply("رد البوت")
 
 
 
-client.on('message', prof=>{
- 
-    if(prof.content.startsWith('hide'))
-    {
-       if(!prof.guild.me.hasPermission('MANAGE_CHANNELS'))return prof.reply('**i dont hava premission `MANAGE_CHANNELS`:pleading_face: **')
-  if(!prof.member.hasPermission('MANAGE_CHANNELS'))return prof.reply('**you dont hava`MANAGE_CHANNELS`Permission.!**')
-  
-  prof.channel.overwritePermissions([{
-      id:prof.guild.id,
-      deny:['READ_MESSAGES'],
-    }]).then(p=>{
-        var professor = new Discord.MessageEmbed()
-        .setColor('#RANDOM')
-        .setThumbnail(client.user.avatarURL())
-        .setTitle(`Locked ${prof.channel.name} <a:emoji_46:779130331101790228>`)
-        .setDescription(`This Channel is <#${prof.channel.id}> Locked <a:emoji_46:779130331101790228>`)
-        prof.channel.send(professor);
-    })
-  
-    }
-    if(prof.content.startsWith('show'))
-    {
-       if(!prof.guild.me.hasPermission('MANAGE_CHANNELS'))return prof.reply('**i dont hava premission `MANAGE_CHANNELS`:pleading_face: **')
-  if(!prof.member.hasPermission('MANAGE_CHANNELS'))return prof.reply('**you dont hava`MANAGE_CHANNELS`Permission.!**')
-  
-  prof.channel.overwritePermissions([{
-      id:prof.guild.id,
-      allow:['READ_MESSAGES'],
-    }]).then(p=>{
-        var professor = new Discord.MessageEmbed()
-        .setColor('#RANDOM')
-        .setThumbnail(client.user.avatarURL())
-        .setTitle(`Unlock ${prof.channel.name} <a:748240033819132076:779130295349280798> `)
-        .setDescription(`This Channel is <#${prof.channel.id}> UnLocked <a:748240033819132076:779130295349280798>`)
-        prof.channel.send(professor);
-    })
-  
-    }
-  
-  
-})
-
+        
