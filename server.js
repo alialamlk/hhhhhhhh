@@ -11,7 +11,7 @@ client.on('message', message => {
       .setTitle("test")
    
       .setDescription("[test](https://discord.gg/vefkV7ZNqK)") 
-      .addField(``)
+      
       .addField(`ايش تبي`)
   
      .setColor("RED") 
@@ -61,5 +61,27 @@ message.author.send(w)
 }
 
 });
+//يلا عادي بسوي كود   
+// لا تكذب 
+essage.author.bot || message.channel.type == "dm") return;
+var args = message.content.split("")[1];
+var avt = args || message.author.Id;
+client
+.fetchUser(avt)
+.then(user => {
+avt = user;
+let avtEmbed = new Discord.RichEmbed
+          .setColor("#36393e")
+          .setAuthor(`${avt.username}'s Avatar`, message.author.avatarURL)
+          .setImage(avt.avatarURL)
+          .setFooter(`Avatar`, message.client.user.avatarURL);
+        message.channel.send(avtEmbed);
+})
+.catch(() => message.channel.send(`يجب عليك وضع ايدي الشخص`));
+}
+});
+
+
+
 
 
