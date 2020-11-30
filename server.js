@@ -81,7 +81,8 @@ msg2.edit(w)
 }
 
 });
-//يلا عادي بسوي كود   
+//يلا عادي بسوي كود  
+
 // لا تكذب 
 client.on('message', message => {
   if(message.content.startsWith("a"))  {
@@ -139,34 +140,39 @@ msg.edit(ko)
   msg.reactions.removeAll()
 msg.react('◀️')
   message.author.send(ggg) 
+  msg.reactions.removeAll()
 
-       .then(msg => {
-
-msg.react('🔼')
-
-let mkmk = (reaction, user) => reaction.emoji.name === '🔼' && user.id === message.author.id;
-
-let mmmm = msg.createReactionCollector(kk, { time: 20000 });
+o.on("collect", r => {
 
 
-
-
-
-
-        
-  
-   
-    
 
 
   
-
-} )  })
+})  })
     
 }) 
 })
 
-    }) 
+    })
 
       }
     });
+
+
+
+client.on('message', message => {
+
+// طماطه 
+    let argresult = tomato.content.split(` `).slice(1).join(' ');
+
+    if (tomato.content.startsWith('-setPlay')) {
+
+
+
+
+    tomato.delete();
+
+
+     client.user.setActivity(argresult,{type: 'PLAYING'});
+      tomato.channel.send("تم تغير الحالة ") 
+     }})
