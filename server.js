@@ -3,16 +3,10 @@
 const client = new Discord.Client 
 client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("test");
-client.on('message', message => {
 
-  if(message.content.startsWith("Y"))  {
-       var w = new Discord.MessageEmbed()
-       .setTitle("طماطه مبرمج محترف")
-       .setField("من مهارته يصلح البروجكت")
-  message.channel.send(w)
-}}) 
 
-// ثوزني
+
+ 
 
 
 // روح ملف ثاتي
@@ -20,7 +14,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.startsWith("!"))  {
       var w = new Discord.MessageEmbed() 
-
+.setTitle("الاوامر العامة") 
       .setDescription("قريباً ") 
 
      .setColor("RED")
@@ -63,3 +57,12 @@ client.on('message', message => {
 .setImage(message.author.avatarURL()) 
      message.channel.send(me)
     }}) 
+
+client.on('message', message => {
+if(message.content.startWith("k")){
+      var w = new Discord.MessageEmbed() 
+      .setTitle("الاوامر")
+      .setDescription("test ") 
+      message.channel.send(`تبي ايش ؟ `)
+
+}})// خلي `
