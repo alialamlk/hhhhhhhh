@@ -129,18 +129,39 @@ o.on("collect", r => {
 
   let ko = new Discord.MessageEmbed() 
 
-  var h 
+      var ggg = new Discord.MessageEmbed() 
+
+
 .setColor("Red")
     .setTitle('قائمه الاوامر رقم 2')
         .setDescription("قريبا جدا جدا ") 
 msg.edit(ko)
   msg.reactions.removeAll()
 msg.react('◀️')
-  message.author.send(ko) 
+  message.author.send(ggg) 
+
+       .then(msg => {
+
+msg.react('🔼')
+
+let mkmk = (reaction, user) => reaction.emoji.name === '🔼' && user.id === message.author.id;
+
+let mmmm = msg.createReactionCollector(kk, { time: 20000 });
+
+
+
+
+
+
+        
+  
+   
+    
 
 
   
-   }) 
+
+} )  })
     
 }) 
 })
@@ -148,5 +169,4 @@ msg.react('◀️')
     }) 
 
       }
-
-} ); // خلي `
+    });
