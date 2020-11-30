@@ -8,17 +8,20 @@ client.on('message', message => {
   if(message.content.startsWith("s s"))  {
         if (!message.channel.guild)
                 return message.channel.send(` | This Command is used only in servers!`);
-       const millis = new Data().getTime() - message.guild.createdAt.getTime();
-       const now = new Data();
-       const verificationLevels = ["None", ]
-  var w = new Discord.MessageEmbed() 
-      .setTitle("تم البرمجة من قبل طماطه و alialmalk")
-      .setDescription("[سيرفر السبورت](https://discord.gg/vefkV7ZNqK)") 
-      .addField(`مافي شي اسويه للاسف `)
-      .addField(`اذا عندك اقتراح نسويه اقترحه في سيرفر السبورت`)
-     .setColor("Black") 
-        .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
-          .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
+       const millis = new Date().getTime() - message.guild.createdAt.getTime();
+       const now = new Date();
+       const verificationLevels = ["None", "Low", "Medium", "Extreme"];
+       const days = millis / 1000 / 60 / 60 / 24;
+       var w = new Discord.MessageEmbed()
+       .setAuthor(message.guild.name, message.guild.iconURL)
+       .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
+       .addField(
+       ":calendar:✽** Created On**",
+       `» ${message.guild.vreated.toLocaleString()}`,
+         true
+       )
+       
+       .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
 
   
   message.channel.send(w)
@@ -71,6 +74,8 @@ message.author.send(w)
 client.on('message', message => {
   if(message.content.startsWith("a"))  {
      let me = new Discord.MessageEmbed() 
+     
+
 .setImage(message.author.avatarURL()) 
      message.channel.send(me)
     }}) 
