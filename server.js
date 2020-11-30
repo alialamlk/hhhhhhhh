@@ -6,6 +6,11 @@ console.log("test");
 client.on('message', message => {
 
   if(message.content.startsWith("s s"))  {
+        if (!message.channel.guild)
+                return message.channel.send(` | This Command is used only in servers!`);
+       const millis = new Data().getTime() - message.guild.createdAt.getTime();
+       const now = new Data();
+       const verificationLevels = ["None", ]
   var w = new Discord.MessageEmbed() 
       .setTitle("تم البرمجة من قبل طماطه و alialmalk")
       .setDescription("[سيرفر السبورت](https://discord.gg/vefkV7ZNqK)") 
@@ -14,13 +19,7 @@ client.on('message', message => {
      .setColor("Black") 
         .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
           .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
-      .addField(
-      " :speech_balloon:✽** Channels **",
-        `» ${message.guild.channels.filter(m => m.type === "text").size}**`+
-          " TexT | VoicE  " +
 
-
-)
   
   message.channel.send(w)
 }}) 
@@ -69,3 +68,9 @@ message.author.send(w)
 });
 //يلا عادي بسوي كود   
 // لا تكذب 
+client.on('message', message => {
+  if(message.content.startsWith("a"))  {
+     let me = new Discord.MessageEmbed() 
+.setImage(message.author.avatarURL()) 
+     message.channel.send(me)
+    }}) 
