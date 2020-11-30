@@ -288,6 +288,9 @@ client.user.setUsername(args)
 
 client.on('message', m => {
       if (m.content.startsWith("رسالتك")) { 
+        m.guild.id == '782767111885160488'
+
+
 m.reply("رد البوت")
 }})
 
