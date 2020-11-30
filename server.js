@@ -307,6 +307,17 @@ tomato.channel.send(args)
 }}) 
 
 client.on('message', ali =>{
+  var prefix = '+'
   if(ali.author.bot)return;
-  let args = ali.content.split(" ").slice 
-})
+  let args = ali.content.split(" ").slice(1).join(" ")
+  if(!ali.member.hasPermission('ADMINISTRATOR'))return;
+  if(ali.content.startsWith(prefix + 'say')) {
+    var alialmalk = new Discord.MessageEmbed()
+    .setAuthor(ali.guild.name)
+    .setThumbnail(ali.guild.iconURL())
+    .setColor('Black')
+    .setDescription(args)
+    
+  }
+} )// تخريب 
+//وتف
