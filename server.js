@@ -1,34 +1,28 @@
-// server.js
-// where your node app starts
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const express = require("express");
-const app = express();
+  const Discord = require('discord.js')
+const client = new Discord.Client 
+client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
+console.log("test");
+client.on('message', message => {
 
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+  if(message.content.startsWith("r"))  {
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
+var aa = new Discord.MessageEmbed() 
 
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
-});
+.setTitle("تم البرمجه من alialmalk و طماطه")
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
-});
+// اتركني اصحح 
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
-});
+.setDescreiption("[سيرفر السبورت](https://discord.gg/qxraAyNT)")
+
+        message.channel.send(aa) 
+
+// معرف الايبمد aa مسوية انت
+
+}}) 
+
+// ثوزني
+
+
+// روح ملف ثاتي
+//صبر يعم
