@@ -26,6 +26,7 @@ client.on('message', message => {
 
 let k = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
 
+
 let e = msg.createReactionCollector(k, { time: 20000 });
 
        
@@ -39,10 +40,28 @@ message.author.send(w)
     message.delete()
   msg.edit("تم الإرسال ") 
   msg.reactions.removeAll()
+ 
+  .then(() => msg.react('▶️')) 
+  
+
+        
+let yt = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
+
+let ml = msg.createReactionCollector(yt, { time: 20000 });
+
+       
+
+ml.on("collect", r => {
+  let co = new Discord.MessageEmbed() 
+ .setColor("RED") 
+ .setTitle("قائمة الاوامر ٢")
+  msg.edit(co)
+  
+ })}) 
   .catch(console.error)
      })
 
-    })
+    
 
 }
 
@@ -59,10 +78,33 @@ client.on('message', message => {
     }}) 
 
 client.on('message', message => {
-if(message.content.startWith("k")){
+if(message.content.startsWith("k"))  {
       var w = new Discord.MessageEmbed() 
       .setTitle("الاوامر")
       .setDescription("test ") 
       message.channel.send(`تبي ايش ؟ `)
+.then(msg => 
+      {
+msg.react('1️⃣')
 
-}})// خلي `
+let k = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+
+let e = msg.createReactionCollector(k, { time: 20000 });
+
+e.on("collect", r => {
+
+message.delete
+msg.edit('تم الارسال')
+
+  
+  
+    msg.reactions.removeAll()
+
+
+})
+
+    }) 
+
+      }
+
+} ); // خلي `
