@@ -12,7 +12,12 @@ client.on('message', message => {
       .addField(`مافي شي اسويه للاسف `)
       .addField(`اذا عندك اقتراح نسويه اقترحه في سيرفر السبورت`)
      .setColor("Black") 
-        .addField(":id:✽** Server ID**",)
+        .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
+          .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
+        .addField(":calendar: ✽**created on**"
+`» ${message.guild.createdAt.toLocaleString ()}
+                 )
+
       message.channel.send(w)
 }}) 
 
@@ -58,29 +63,18 @@ message.author.send(w)
 }
 
 });
-/*
 //يلا عادي بسوي كود   
 // لا تكذب 
-essage.author.bot || message.channel.type == "dm") return;
-var args = message.content.split("")[1];
-var avt = args || message.author.Id;
-client
-.fetchUser(avt)
-.then(user => {
-avt = user;
-let avtEmbed = new Discord.RichEmbed
-          .setColor("#36393e")
-          .setAuthor(`${avt.username}'s Avatar`, message.author.avatarURL)
-          .setImage(avt.avatarURL)
-          .setFooter(`Avatar`, message.client.user.avatarURL);
-        message.channel.send(avtEmbed);
-})
-.catch(() => message.channel.send(`يجب عليك وضع ايدي الشخص`));
-}
-});
-*/
+client.on('message', message => {
 
+  if(message.content.startsWith("r"))  {
+    if(mentionned){
 
+          var k = mentionned; } else {
 
-
-
+          var k = message.author;
+let me = new Discord.MessageEmbed() 
+.setImage(k.avatarURL())
+ 
+    
+}}}) 
