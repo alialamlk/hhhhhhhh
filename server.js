@@ -286,6 +286,6 @@ client.user.setUsername(args)
 
 
 client.on('message', m => {
-  if(m.comtent.split)
-  
-})
+      if (m.content.startsWith("hi")) { 
+m.reply("طماطه تاج راس الكل")
+}})
