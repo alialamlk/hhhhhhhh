@@ -5,17 +5,14 @@ client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("test");
 client.on('message', message => {
 
-  if(message.content.startsWith("r"))  {
+  if(message.content.startsWith("s s"))  {
   var w = new Discord.MessageEmbed() 
-
-      .setTitle("test")
-   
-      .setDescription("[test](https://discord.gg/vefkV7ZNqK)") 
-      
-      .addField(`ايش تبي`)
-  
-     .setColor("RED") 
-
+      .setTitle("تم البرمجة من قبل طماطه و alialmalk")
+      .setDescription("[سيرفر السبورت](https://discord.gg/vefkV7ZNqK)") 
+      .addField(`مافي شي اسويه للاسف `)
+      .addField(`اذا عندك اقتراح نسويه اقترحه في سيرفر السبورت`)
+     .setColor("Black") 
+        .addField(":id:✽** Server ID**",)
       message.channel.send(w)
 }}) 
 
@@ -61,6 +58,7 @@ message.author.send(w)
 }
 
 });
+/*
 //يلا عادي بسوي كود   
 // لا تكذب 
 essage.author.bot || message.channel.type == "dm") return;
@@ -80,6 +78,7 @@ let avtEmbed = new Discord.RichEmbed
 .catch(() => message.channel.send(`يجب عليك وضع ايدي الشخص`));
 }
 });
+*/
 
 
 
