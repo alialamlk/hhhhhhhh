@@ -312,12 +312,13 @@ client.on('message', ali =>{
   let args = ali.content.split(" ").slice(1).join(" ")
   if(!ali.member.hasPermission('ADMINISTRATOR'))return;
   if(ali.content.startsWith(prefix + 'say')) {
-    var w = new Discord.MessageEmbed()
+    var wp = new Discord.MessageEmbed()
     .setAuthor(ali.guild.name)
     .setThumbnail(ali.guild.iconURL())
     .setColor('Black')
     .setDescription(args)
-    ali.delete()
-    ali.chennel.send(w)// لا تلعب
+    .setTimestamp()
+    ali.delete()//  كودك خربان
+    ali.chennel.send(wp)// لا تلعب
   }
 } )
