@@ -347,3 +347,23 @@ msg.react("✅")
   msg.react("⛔")  // ثواني احرب كودي
 }) // قصدك يوصل لروم خاص اذا قبلتة ينرسل
  }})  //بجرب اسوي كود + كم تقيمك لي 
+
+client.on('message', alialmalk => {
+var logchannel = alialmalk.guild.channels.cache.find(r=> r.name === 'طلبات')
+let args = alialmalk.content.split(" ").slice(1).join(" ")
+    if (alialmalk.content.startsWith( "طلب")) { 
+alialmalk.delete() // يخي خذة كوبي وعدل
+let ff = new Discord.MessageEmbed()
+.setTitle("طلب جديد من" + alialmalk.author.username)
+.setDescription(`الطلب
+
+
+
+  ${args}  `)
+ 
+.setThumbnail(alialmalk.author.avatarURL()) 
+.setColor("RANDOM")
+logchannel.send(ff)
+    
+    }})
+          
