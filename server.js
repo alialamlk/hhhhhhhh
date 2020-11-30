@@ -289,3 +289,20 @@ client.on('message', m => {
       if (m.content.startsWith("رسالتك")) { 
 m.reply("رد البوت")
 }})
+
+
+client.on('message', message => {
+      if (message.content.startsWith("hide")) { 
+message.channel.updateOverwrite(message.channel.id, { SEND_MESSAGES: false, READ_MESSAGES: false});
+message.reply('تم اخفاء الروم')
+}
+})
+
+
+client.on('message', message => {
+if(message.content === 'show') {
+message.channel.updateOverwrite(message.channel.id, { SEND_MESSAGES: true, READ_MESSAGES: true});
+message.reply('تم اضهار الروم')
+}
+})
+
