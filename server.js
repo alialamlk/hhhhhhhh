@@ -6,19 +6,17 @@ console.log("test");
 client.on('message', message => {
 
   if(message.content.startsWith("r"))  {
+  var w = new Discord.MessageEmbed() 
 
-var aa = new Discord.MessageEmbed() 
+      .setTitle("test")
+   
+      .setDescription("[test](https://discord.gg/vefkV7ZNqK)") 
+      .addField(``)
+      .addField(`ايش تبي`)
+  
+     .setColor("RED") 
 
-.setTitle("تم البرمجه من alialmalk و طماطه")
-
-// اتركني اصحح 
-
-.setDescreiption("[سيرفر السبورت](https://discord.gg/qxraAyNT)")
-
-        message.channel.send(aa) 
-
-// معرف الايبمد aa مسوية انت
-
+      message.channel.send(w)
 }}) 
 
 // ثوزني
@@ -26,3 +24,16 @@ var aa = new Discord.MessageEmbed()
 
 // روح ملف ثاتي
 //صبر يعم
+client.on('message', message => {
+
+  if(message.content.startsWith("!"))  {
+      var w = new Discord.MessageEmbed() 
+
+      .setDescription("test") 
+
+     .setColor("RANDOM") 
+
+message.author.send(w) 
+   
+    message.channel.send("") 
+}}) 
