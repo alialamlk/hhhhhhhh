@@ -37,41 +37,39 @@ e.on("collect", r => {
 
 
 message.author.send(w) 
-   .then(msg => {
+   .then(msg2 => {
 
-        msg.react('▶️')
+        msg2.react('▶️')
     let yt = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
 
-let ml = msg.createReactionCollector(yt, { time: 20000 });
+let ml = msg2.createReactionCollector(yt, { time: 20000 });
   
 
 ml.on("collect", r => {
-
+message.delete() 
   let co = new Discord.MessageEmbed() 
 
  .setColor("RED") 
 
  .setTitle("قائمة الاوامر ٢")
 .setDescription("قريباً ") 
-  msg.edit(co)
-  msg.reactions.removeAll()
-msg.react("◀️") 
-    let yu = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
+  msg2.edit(co)
+msg2.react("◀️") 
+    let yu = (reaction, user) => reaction.emoji.name === '◀️' && user.id === message.author.id;
 
-let mli = msg.createReactionCollector(yu, { time: 20000 });
+let mli = msg2.createReactionCollector(yu, { time: 20000 });
 
   
 
 mli.on("collect", r => {
-msg.edit(w) 
-}) 
- })
+msg2.edit(w) 
     
-  message.edit("تم الإرسال ") 
-  message.delete()
-  msg.reactions.removeAll()
 
+ 
 
+ })
+
+}) 
  
        
 
@@ -102,9 +100,9 @@ if(message.content.startsWith("k"))  {
       message.channel.send("ايش تبي ؟")
 .then(msg =>
       {
-msg.react('1️⃣')
+msg.react('⏺')
 
-let k = (reaction, user) => reaction.emoji.name === '1️⃣' && user.id === message.author.id;
+let k = (reaction, user) => reaction.emoji.name === '⏺' && user.id === message.author.id;
 
 let e = msg.createReactionCollector(k, { time: 20000 });
 
@@ -121,9 +119,9 @@ msg.edit('تم الارسال')
 
      .then(msg => {
 
-msg.react('2️⃣')
+msg.react('▶️')
   
-let kk = (reaction, user) => reaction.emoji.name === '2️⃣' && user.id === message.author.id;
+let kk = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
 
 let o = msg.createReactionCollector(kk, { time: 20000 });
 
@@ -131,13 +129,16 @@ o.on("collect", r => {
 
   let ko = new Discord.MessageEmbed() 
 
+  var h 
 .setColor("Red")
     .setTitle('قائمه الاوامر رقم 2')
         .setDescription("قريبا جدا جدا ") 
 msg.edit(ko)
   msg.reactions.removeAll()
-msg.react('1️⃣')
-  
+msg.react('◀️')
+  message.author.send(ko) 
+
+
   
    }) 
     
