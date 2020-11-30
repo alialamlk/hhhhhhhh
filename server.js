@@ -305,9 +305,9 @@ tomato.delete()
 
 tomato.channel.send(args) 
 }}) 
-
+/*
 client.on('message', ali =>{
-  var prefix = '+'
+var prefix = '-'
   if(ali.author.bot)return;
   let args = ali.content.split(" ").slice(1).join(" ")
   if(!ali.member.hasPermission('ADMINISTRATOR'))return;
@@ -315,10 +315,24 @@ client.on('message', ali =>{
     var wp = new Discord.MessageEmbed()
     .setAuthor(ali.guild.name)
     .setThumbnail(ali.guild.iconURL())
-    .setColor('Black')
+    .setColor('#RANDOM')
     .setDescription(args)
     .setTimestamp()
-    ali.delete()//  كودك خربان
-    ali.chennel.send(wp)// لا تلعب
-  }
+    ali.delete(1000);
+    ali.chennel.send(wp);
+  } 
 } )
+*/
+client.on('message', tomato => {
+var logchannel = tomato.guild.channels.cache.find(r=> r.name === 'test')
+let args = tomato.content.split(" ").slice(1).join(" ")
+
+    if (tomato.content.startsWith( "!اقتراح")) { 
+
+tomato.delete() 
+let us = new Discord.MessageEmbed() 
+
+
+logchannel.send() 
+
+}}) 
