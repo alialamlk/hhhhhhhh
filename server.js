@@ -12,7 +12,7 @@ console.log("test");
 // روح ملف ثاتي
 //صبر يعم
 client.on('message', message => {
-  if(message.content.startsWith("!"))  {
+  if(message.content.startsWith("!help"))  {
       var w = new Discord.MessageEmbed() 
 .setTitle("الاوامر العامة") 
       .setDescription("قريباً ") 
@@ -160,19 +160,75 @@ o.on("collect", r => {
 
 
 
-client.on('message', message => {
+
+
+
+
+
+     
+client.on('message', m => {
 
 // طماطه 
-    let argresult = tomato.content.split(` `).slice(1).join(' ');
 
-    if (tomato.content.startsWith('-setPlay')) {
+    let argresult = m.content.split(` `).slice(1).join(' ');
 
+    if (m.content.startsWith('!setPlay')) {
 
+ 
 
+    m.delete();
 
-    tomato.delete();
+m.channel.send("هل تريد تغير الحالة") 
 
+.then(msg => {
 
+        msg.react('✅')
+
+.then(() => msg.react('✅'))
+
+let reaction10Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === m.author.id;
+
+let reaction10 = msg.createReactionCollector(reaction10Filter, { time: 20000 });
+
+       
+
+reaction10.on("collect", r => {
+msg.delete() 
+  m.delete() 
      client.user.setActivity(argresult,{type: 'PLAYING'});
-      tomato.channel.send("تم تغير الحالة ") 
-     }})
+
+      m.channel.send("تم تغير الحالة ")
+
+
+
+
+    })})}}) 
+
+client.on('message', tomato => {
+
+let args = tomato.content.split(" ").slice(1).join(" ")
+
+    if (tomato.content.startsWith( "+setA")) { 
+
+tomato.delete() 
+
+tomato.channel.send("هل تريد تغير الحالة") 
+
+.then(msg => {
+
+        msg.react('✅')
+
+.then(() => msg.react('✅'))
+
+
+
+
+      tomato.channel.send('تم تغير الصورة ')            
+
+client.user.setAvatar(args)
+
+  .catch(console.error); 
+
+
+}
+});
