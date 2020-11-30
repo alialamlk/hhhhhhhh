@@ -14,11 +14,15 @@ client.on('message', message => {
      .setColor("Black") 
         .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
           .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
-        .addField(":calendar: ✽**created on**"
-`» ${message.guild.createdAt.toLocaleString ()}
-                 )
+      .addField(
+      " :speech_balloon:✽** Channels **",
+        `» ${message.guild.channels.filter(m => m.type === "text").size}**`+
+          " TexT | VoicE  " +
 
-      message.channel.send(w)
+
+)
+  
+  message.channel.send(w)
 }}) 
 
 // ثوزني
@@ -65,16 +69,3 @@ message.author.send(w)
 });
 //يلا عادي بسوي كود   
 // لا تكذب 
-client.on('message', message => {
-
-  if(message.content.startsWith("r"))  {
-    if(mentionned){
-
-          var k = mentionned; } else {
-
-          var k = message.author;
-let me = new Discord.MessageEmbed() 
-.setImage(k.avatarURL())
- 
-    
-}}}) 
