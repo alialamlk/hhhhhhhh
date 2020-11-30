@@ -2,7 +2,7 @@
   const Discord = require('discord.js')
 const client = new Discord.Client 
 client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
-console.log("test");
+console.log("this bot is on");
 
 
 
@@ -283,3 +283,9 @@ client.user.setUsername(args)
 }) 
 } 
 });
+
+
+client.on('message', m => {
+  if(m.comtent.split)
+  
+})
