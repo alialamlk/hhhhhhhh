@@ -328,11 +328,22 @@ var logchannel = tomato.guild.channels.cache.find(r=> r.name === 'test')
 let args = tomato.content.split(" ").slice(1).join(" ")
 
     if (tomato.content.startsWith( "!اقتراح")) { 
-
 tomato.delete() 
 let us = new Discord.MessageEmbed() 
+.setTitle("اقتراح من " + tomato.author.username) 
+.setDescription(`الاقتراح
 
+${args}
 
-logchannel.send() 
+`
+                
+                ) 
+.setThumbnail(tomato.author.avatarURL()) 
+.setColor("RED") 
+logchannel.send(us) 
 
-}}) 
+.then(msg => {
+msg.react("✅")
+  msg.react("⛔")  // ثواني احرب كودي
+}) // قصدك يوصل لروم خاص اذا قبلتة ينرسل
+ }})  //بجرب اسوي كود + كم تقيمك لي 
