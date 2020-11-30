@@ -294,6 +294,12 @@ client.on('message', m => {
 m.reply("رد البوت")
 }})
 
+const rd = JSON.parse(fs.readFileSync("./replyMSG.json", "utf8"));
 
+function saveReplay() {
+  .writeFile("./replyMSG.json", JSON.stringify(replyMSG), function(err) {
+    if (err) throw err;
+  });
+}
 
         
