@@ -269,9 +269,14 @@ reaction1.on("collect", r => {
 
 
 
+client.user.setUsername(args)
+
+  .then(user => 
+
       tomato.channel.send('تم تغير الاسم ')            
 
-client.user.setNickName(args)
+) 
+ 
 
   .catch(console.error); 
 }) 
