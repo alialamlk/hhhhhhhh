@@ -54,12 +54,24 @@ ml.on("collect", r => {
  .setTitle("قائمة الاوامر ٢")
 .setDescription("قريباً ") 
   msg.edit(co)
-
- })
-    message.delete()
-  message.edit("تم الإرسال ") 
   msg.reactions.removeAll()
- 
+msg.react("◀️") 
+    let yu = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
+
+let mli = msg.createReactionCollector(yu, { time: 20000 });
+
+  
+
+mli.on("collect", r => {
+msg.edit(w) 
+}) 
+ })
+    
+  message.edit("تم الإرسال ") 
+  message.delete()
+  msg.reactions.removeAll()
+
+
  
        
 
@@ -98,14 +110,38 @@ let e = msg.createReactionCollector(k, { time: 20000 });
 
 e.on("collect", r => {
 
+  
+  message.author.send(w) 
+
+
+  
 message.delete
 msg.edit('تم الارسال')
   msg.reactions.removeAll()
 
+     .then(msg => {
+
+msg.react('2️⃣')
+  
+let kk = (reaction, user) => reaction.emoji.name === '2️⃣' && user.id === message.author.id;
+
+let o = msg.createReactionCollector(kk, { time: 20000 });
+
+o.on("collect", r => {
+
+  let ko = new Discord.MessageEmbed() 
+
+.setColor("Red")
+    .setTitle('قائمه الاوامر رقم 2')
+        .setDescription("قريبا جدا جدا ") 
+msg.edit(ko)
+  msg.reactions.removeAll()
+msg.react('1️⃣')
   
   
-
-
+   }) 
+    
+}) 
 })
 
     }) 
