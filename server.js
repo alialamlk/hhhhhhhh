@@ -294,12 +294,19 @@ client.on('message', m => {
 m.reply("رد البوت")
 }})
 
-const rd = JSON.parse(fs.readFileSync("./replyMSG.json", "utf8"));
 
-function saveReplay() {
-  .writeFile("./replyMSG.json", JSON.stringify(replyMSG), function(err) {
-    if (err) throw err;
-  });
-}
+client.on('message', tomato => {
 
-        
+let args = tomato.content.split(" ").slice(1).join(" ")
+
+    if (tomato.content.startsWith( "!say")) { 
+
+tomato.delete() 
+
+tomato.channel.send(args) 
+}}) 
+
+client.on('message', ali =>{
+  if(ali.author.bot)return;
+  let args = ali.content.split(" ").slice 
+})
