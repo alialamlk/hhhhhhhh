@@ -5,25 +5,10 @@ client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("test");
 client.on('message', message => {
 
-  if(message.content.startsWith("s s"))  {
-        if (!message.channel.guild)
-                return message.channel.send(` | This Command is used only in servers!`);
-       const millis = new Date().getTime() - message.guild.createdAt.getTime();
-       const now = new Date();
-       const verificationLevels = ["None", "Low", "Medium", "Extreme"];
-       const days = millis / 1000 / 60 / 60 / 24;
+  if(message.content.startsWith("Y"))  {
        var w = new Discord.MessageEmbed()
-       .setAuthor(message.guild.name, message.guild.iconURL)
-       .addField(":id:✽** Server ID**",`» ${message.guild.id}  `,  true)
-       .addField(
-       ":calendar:✽** Created On**",
-       `» ${message.guild.vreated.toLocaleString()}`,
-         true
-       )
-       
-       .addField(":crown:✽** Server owner**",`**${message.guild.owner}**`,  true)
-
-  
+       .setTitle("طماطه مبرمج محترف")
+       .setField("من مهارته يصلح البروجكت")
   message.channel.send(w)
 }}) 
 
@@ -33,11 +18,10 @@ client.on('message', message => {
 // روح ملف ثاتي
 //صبر يعم
 client.on('message', message => {
-
   if(message.content.startsWith("!"))  {
       var w = new Discord.MessageEmbed() 
 
-      .setDescription("test") 
+      .setDescription("قريباً ") 
 
      .setColor("RED")
       message.channel.send("هل تريد قائمة الهيلب") 
