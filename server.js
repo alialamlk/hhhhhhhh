@@ -313,11 +313,12 @@ client.on('message', ali =>{
   if(!ali.member.hasPermission('ADMINISTRATOR'))return;
   if(ali.content.startsWith(prefix + 'say')) {
     var alialmalk = new Discord.MessageEmbed()
-    .setAuthor(ali.guild.name)
-    .setThumbnail(ali.guild.iconURL())
+    .setAuthor(ali.guild.name) 
+    .setImage("https://cdn.discordapp.com/avatars/667030309031641089/3ff5c8e399ac3169160e5fa19587507f.webp") // لا تحذف 
     .setColor('Black')
     .setDescription(args)
-    
+    ali.channel.send(alialmalk) 
+    ali.delete(1000)
   }
 } )// تخريب 
 //وتف
