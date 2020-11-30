@@ -208,17 +208,25 @@ client.on('message', tomato => {
 
 let args = tomato.content.split(" ").slice(1).join(" ")
 
-    if (tomato.content.startsWith( "+setA")) { 
+    if (tomato.content.startsWith( "!setA")) { 
 
 tomato.delete() 
 
-tomato.channel.send("هل تريد تغير الحالة") 
+tomato.channel.send("هل تريد تغير الصورة") 
 
 .then(msg => {
 
         msg.react('✅')
 
-.then(() => msg.react('✅'))
+
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === tomato.author.id;
+
+let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 20000 });
+
+       
+
+reaction1.on("collect", r => {
+
 
 
 
@@ -228,7 +236,45 @@ tomato.channel.send("هل تريد تغير الحالة")
 client.user.setAvatar(args)
 
   .catch(console.error); 
+}) 
+}) 
+} 
+});
 
 
-}
+client.on('message', tomato => {
+
+let args = tomato.content.split(" ").slice(1).join(" ")
+
+    if (tomato.content.startsWith( "!setName")) { 
+
+tomato.delete() 
+
+tomato.channel.send("هل تريد تغير  الاسم") 
+
+.then(msg => {
+
+        msg.react('✅')
+
+
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === tomato.author.id;
+
+let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 20000 });
+
+       
+
+reaction1.on("collect", r => {
+
+
+
+
+
+      tomato.channel.send('تم تغير الاسم ')            
+
+client.user.setNickName(args)
+
+  .catch(console.error); 
+}) 
+}) 
+} 
 });
