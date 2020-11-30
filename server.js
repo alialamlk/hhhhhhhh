@@ -4,7 +4,7 @@ const client = new Discord.Client
 client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("this bot is on");
 
-const prefix78 = "!" 
+const prefix78 = "!" ;
 
  // اول اقصد
 // تجارب تايم
@@ -279,7 +279,7 @@ client.user.setUsername(args)
 ) 
  
 
-8  .catch(console.error); 
+  .catch(console.error); 
 }) 
 }) 
 } 
@@ -312,13 +312,12 @@ client.on('message', ali =>{
   let args = ali.content.split(" ").slice(1).join(" ")
   if(!ali.member.hasPermission('ADMINISTRATOR'))return;
   if(ali.content.startsWith(prefix + 'say')) {
-    var alialmalk = new Discord.MessageEmbed()
-    .setAuthor(ali.guild.name) 
-    .setImage("https://cdn.discordapp.com/avatars/667030309031641089/3ff5c8e399ac3169160e5fa19587507f.webp") // لا تحذف 
+    var w = new Discord.MessageEmbed()
+    .setAuthor(ali.guild.name)
+    .setThumbnail(ali.guild.iconURL())
     .setColor('Black')
     .setDescription(args)
-    ali.channel.send(alialmalk) 
-    ali.delete(1000)
+    ali.delete()
+    ali.chennel.send(w)// لا تلعب
   }
-} )// تخريب 
-//وتف
+} )
