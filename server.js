@@ -30,39 +30,44 @@ let k = (reaction, user) => reaction.emoji.name === '✅' && user.id === message
 let e = msg.createReactionCollector(k, { time: 20000 });
 
        
+ 
+       
 
 e.on("collect", r => {
 
 
 message.author.send(w) 
-   
-    
-    message.delete()
-  msg.edit("تم الإرسال ") 
-  msg.reactions.removeAll()
- 
-  .then(() => msg.react('▶️')) 
-  
+   .then(msg => {
 
-        
-let yt = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
+        msg.react('▶️')
+    let yt = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
 
 let ml = msg.createReactionCollector(yt, { time: 20000 });
-
-       
+  
 
 ml.on("collect", r => {
+
   let co = new Discord.MessageEmbed() 
+
  .setColor("RED") 
+
  .setTitle("قائمة الاوامر ٢")
+.setDescription("قريباً ") 
   msg.edit(co)
-  
+
+ })
+    message.delete()
+  message.edit("تم الإرسال ") 
+  msg.reactions.removeAll()
+ 
+ 
+       
+
  })}) 
-  .catch(console.error)
+  
      })
 
     
-
 }
 
 });
@@ -82,12 +87,12 @@ if(message.content.startsWith("k"))  {
       var w = new Discord.MessageEmbed() 
       .setTitle("الاوامر")
       .setDescription("test ") 
-      message.channel.send(`تبي ايش ؟ `)
-.then(msg => 
+      message.channel.send("ايش تبي ؟")
+.then(msg =>
       {
 msg.react('1️⃣')
 
-let k = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+let k = (reaction, user) => reaction.emoji.name === '1️⃣' && user.id === message.author.id;
 
 let e = msg.createReactionCollector(k, { time: 20000 });
 
@@ -95,10 +100,10 @@ e.on("collect", r => {
 
 message.delete
 msg.edit('تم الارسال')
+  msg.reactions.removeAll()
 
   
   
-    msg.reactions.removeAll()
 
 
 })
