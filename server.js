@@ -365,5 +365,41 @@ let ff = new Discord.MessageEmbed()
 .setColor("RANDOM")
 logchannel.send(ff)
     
-    }})
-          
+    }})// لا تشيل يغبي
+client.on('message', alialmalk => {
+var prefix = '-';
+var logchannel = alialmalk.guild.channels.cache.find(r=> r.name === 'شكاوي')
+
+let args = alialmalk.content.split(" ").slice(1).join(" ")
+
+    if (alialmalk.content.startsWith(prefix + "report")) { 
+
+alialmalk.delete() // يخي خذة كوبي وعدل
+
+let ff = new Discord.MessageEmbed()
+
+.setTitle("شكوى جديده" + alialmalk.author.username)
+
+.setDescription(` الشكوى 
+
+  ${args}  `)  
+
+.setThumbnail(alialmalk.author.avatarURL()) 
+
+.setColor("RANDOM")
+
+logchannel.send(ff)
+
+    
+
+    
+// ايرور عندي
+}}) //كفو
+
+
+                
+                
+
+
+
+    
