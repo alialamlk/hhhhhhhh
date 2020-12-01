@@ -1,7 +1,7 @@
 
-  const Discord = require('discord.js')
+const Discord = require('discord.js')
 const client = new Discord.Client 
-client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.tDDlrToyLf7a4V5LJhx0N_MM5M8");
+client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.SrjmSDbN7R10ip7qi9-RxNg3BJo");
 console.log("this bot is on");
 client.setMaxListeners(999)
 const prefix78 = "!" ;
@@ -397,23 +397,16 @@ logchannel.send(ff)
     
 // ايرور عندي
 }}) //كفو
-client.setMaxListeners(999)
 
-client.on("message", ali => {
-  var prefix = '-'
-  if(ali.content.startWith(prefix + "ibot")) {
-    var mbot = ali.mentions.member.first()
-        ali.channel.send(`https://discordapp.com/api/oauth2/authorize?client_id=${mbot.id}&permissions=0&scope=bot`)
-  }
   
-})
+  
+
            
 
 client.on('ready', () => {
-
-  console.log(` تم التسجيل لهاذ البوت ${client.user.tag}!`).
-});
-
-  
-
+  console.log(` تم التسجيل لهاذ البوت ${client.user.tag}!`).catch(console.error) ;
+}); // إضغط bot في دبلوفر و صور
+//ترا غيرت التوكن اصعد فوق انسخه
+  //ايش البوت تبند ؟
+//شوف الدس
 
