@@ -1,7 +1,7 @@
 
   const Discord = require('discord.js')
 const client = new Discord.Client 
-client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
+client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.tDDlrToyLf7a4V5LJhx0N_MM5M8");
 console.log("this bot is on");
 client.setMaxListeners(999)
 const prefix78 = "!" ;
@@ -407,31 +407,13 @@ client.on("message", ali => {
   }
   
 })
+           
 
-const invites = {}; // ثبت بكج util
-const wait = require('util').promisify(setTimeout)
-client.on("message", ali => {
-  wait(1000);
-  client.guilds.forEach(king => {
-    king.fetchInvites().then(guildInvites => {
-      invites[king.id] = guildInvites;
-    })
-  })
+client.on('ready', () => {
+
+  console.log(` تم التسجيل لهاذ البوت ${client.user.tag}!`).
+});
+
   
-})      
-
-client.on('guildMemberAdd', member =>{
-  member.guild.fetchInvotes().then(guildInvites => {
-    const gamer = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const welcome = member.guild.channel.find(channel => channel.name === "الدعوات");
-    welcome.send(`  join   ${member} invited by ${inviter} (   ${invite.uses} invites ) ` )
-  })
-})
 
 
-/*
-client.on("message",)
-*/
