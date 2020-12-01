@@ -410,3 +410,13 @@ client.on('ready', () => {
   //ايش البوت تبند ؟
 //شوف الدس
 
+client.on("message", ali => {
+    if (ali.content.startsWith("رسالتك")) { 
+      let me = new Discord.MessageEmbed
+      .setTitle("عنوان القائمه")
+      .addFile("اكتب اي شي")
+      .setDescription("test")
+      .setAuthor(ali.guild.name)
+      
+
+}})
