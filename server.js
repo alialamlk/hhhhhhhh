@@ -324,7 +324,7 @@ var prefix = '-'
 } )
 */
 client.on('message', tomato => {
-var logchannel = tomato.guild.channels.cache.find(r=> r.name === 'test')
+var logchannel = tomato.guild.channels.cache.find(r=> r.name === 'اقتراحات')
 let args = tomato.content.split(" ").slice(1).join(" ")
 
     if (tomato.content.startsWith( "!اقتراح")) { 
@@ -351,7 +351,7 @@ msg.react("✅")
 client.on('message', alialmalk => {
 var logchannel = alialmalk.guild.channels.cache.find(r=> r.name === 'طلبات')
 let args = alialmalk.content.split(" ").slice(1).join(" ")
-    if (alialmalk.content.startsWith( "طلب")) { 
+    if (alialmalk.content.startsWith( "!طلب")) { 
 alialmalk.delete() // يخي خذة كوبي وعدل
 let ff = new Discord.MessageEmbed()
 .setTitle("طلب جديد من" + alialmalk.author.username)
@@ -363,7 +363,9 @@ let ff = new Discord.MessageEmbed()
  
 .setThumbnail(alialmalk.author.avatarURL()) 
 .setColor("RANDOM")
-logchannel.send(ff)
+logchannel.send(ff) 
+      
+                
     
     }})// لا تشيل يغبي
 client.on('message', alialmalk => {
