@@ -423,6 +423,15 @@ client.on("message", ali => {
 client.on('guildMemberAdd', member =>{
   member.guild.fetchInvotes().then(guildInvites => {
     const gamer = invites[member.guild.id];
-    invites[member.guild.id] =
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const welcome = member.guild.channel.find(channel => channel.name === "الدعوات");
+    welcome.send(`  join   ${member} invited by ${inviter} (   ${invite.uses} invites ) ` )
   })
 })
+
+
+/*
+client.on("message",)
+*/
