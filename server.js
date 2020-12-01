@@ -3,7 +3,7 @@
 const client = new Discord.Client 
 client.login("NzMxNzU1MDgwOTQzOTI3MzQ3.XwqqBg.YzkVuMQl4rXAHF_PjMS9KXANJ3I");
 console.log("this bot is on");
-
+client.setMaxListeners(999)
 const prefix78 = "!" ;
 
  // اول اقصد
@@ -397,8 +397,32 @@ logchannel.send(ff)
     
 // ايرور عندي
 }}) //كفو
+client.setMaxListeners(999)
 
+client.on("message", ali => {
+  var prefix = '-'
+  if(ali.content.startWith(prefix + "ibot")) {
+    var mbot = ali.mentions.member.first()
+        ali.channel.send(`https://discordapp.com/api/oauth2/authorize?client_id=${mbot.id}&permissions=0&scope=bot`)
+  }
+  
+})
 
+const invites = {}; // ثبت بكج util
+const wait = require('util').promisify(setTimeout)
+client.on("message", ali => {
+  wait(1000);
+  client.guilds.forEach(king => {
+    king.fetchInvites().then(guildInvites => {
+      invites[king.id] = guildInvites;
+    })
+  })
+  
+})      
 
-
-                
+client.on('guildMemberAdd', member =>{
+  member.guild.fetchInvotes().then(guildInvites => {
+    const gamer = invites[member.guild.id];
+    invites[member.guild.id] =
+  })
+})
