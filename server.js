@@ -411,12 +411,13 @@ client.on('ready', () => {
 //شوف الدس
 
 client.on("message", ali => {
+      let argresult = ali.content.split(` `).slice(1).join(' ');
     if (ali.content.startsWith("رسالتك")) { 
       let me = new Discord.MessageEmbed
       .setTitle("عنوان القائمه")
       .addFile("اكتب اي شي")
       .setDescription("test")
       .setAuthor(ali.guild.name)
-      
+      ali.channel.send(me)
 
 }})
